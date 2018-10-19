@@ -7,15 +7,6 @@ import axios from 'axios';
 
 class Wizard extends Component {
 
-  addTo(){
-    axios.post('/api/houses', {name:this.props.name, address:this.props.address, city:this.props.city, state:this.props.state, zip:this.props.zipcode}).then(res=>{
-      this.props.readHouseList(res)
-    }).catch(error=>{
-      console.error("error in addTo /api/houses", error)
-    })
-    this.props.clear();
-    window.location.reload();
-  }
   render() {
     const {updateName, updateAddress, updateCity, updateState, updateZip, clear} = this.props;
     return (
@@ -33,7 +24,7 @@ class Wizard extends Component {
         <input value={this.props.state} onChange={e=>updateState(e.target.value)}></input>
         Zip
         <input value={this.props.zipcode} onChange={e=>updateZip(e.target.value)}></input>
-        <Link to ='/'><button onClick={()=>this.addTo()}>Complete</button></Link>
+        <Link to='/wizardtwo'><button>Next Step</button></Link>
       </div>
     );
   }

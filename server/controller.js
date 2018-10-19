@@ -9,8 +9,8 @@ module.exports={
     },
     create:(req,res)=>{
         const db = req.app.get('db');
-        const {name, address, city, state, zip} = req.body
-        db.create_house([name, address, city, state, zip]).then(()=>{
+        const {name, address, city, state, zip, image_url, monthly_mortgage, desired_rent} = req.body
+        db.create_house([name, address, city, state, zip, image_url, monthly_mortgage, desired_rent]).then(()=>{
             res.status(200).send('YaTa')
         }).catch(error=>{
             console.error("error in POST /api/houses", error)

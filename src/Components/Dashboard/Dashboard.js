@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import House from '../House/House';
-import Wizard from '../Wizard/Wizard';
+import WizardThree from '../Wizard/WizardThree';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
@@ -32,7 +32,10 @@ class Dashboard extends Component {
     let displayHouses = this.state.houseList.map((el,i)=>{
       return (
         <div key={i}>
-          <House name={el.name} address={el.address} city={el.city} state={el.state} zip={parseInt(el.zip)} house_id={el.house_id} delete={this.delete}/>
+          <House name={el.name} image={el.image_url} 
+          mortgage={el.monthly_mortgage} rent={el.desired_rent} 
+          address={el.address} city={el.city} state={el.state} 
+          zip={parseInt(el.zip)} house_id={el.house_id} delete={this.delete}/>
         </div>
       )
     })
@@ -41,9 +44,8 @@ class Dashboard extends Component {
         <header>
             <Link to='/wizard'><button>Add New Property</button></Link>
         </header>
-        Dashboard
         {/* {displayHouses} */}
-        {this.props.match.path=='/wizard' ? <Wizard match= {this.props.match} readHouseList = {this.readHouseList} /> : displayHouses}
+        {this.props.match.path=='/wizard' ? <WizardThree match= {this.props.match} readHouseList = {this.readHouseList} /> : displayHouses}
       </div>
     );
   }

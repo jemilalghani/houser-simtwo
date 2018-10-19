@@ -1,0 +1,40 @@
+.houses{
+    width: 400px;
+    height: 150px;
+    background:whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(9, 9, 32, 0.548);
+
+}
+.textInfo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 12px;
+    margin: 20px;
+}
+.textInfo h4{
+    margin: 0px;
+}
+.houses img{
+    margin: 15px;
+    border: 2px solid rgba(9, 9, 32, 0.548);
+}
+.houses button{
+    background: transparent;
+    background-image:url('https://raw.githubusercontent.com/DevMountain/simulation-2/master/assets/delete_button.png');
+    width: 10px;
+    height: 15px;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+    outline: none;
+    align-self: flex-start;
+    margin-bottom: 130px;
+    margin-right: 10px;
+    margin-top: 5px;
+}

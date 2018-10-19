@@ -1,0 +1,11 @@
+.HouserHeader{
+    background: rgb(9, 9, 32);
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+.HouserHeader h1 {
+    margin: 10px;
+    color:rgba(245, 222, 179, 0.404);
+    font-weight: 300;
+}
