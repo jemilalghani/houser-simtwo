@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const controlller = require('./controller');
+const controller = require('./controller');
 const massive = require('massive');
 const app = express();
 require('dotenv').config();
@@ -12,7 +12,9 @@ massive(process.env.CONNECTION_STRING).then(database=>{
     console.error("error in connecting to Database", error);
 })
 
-
+app.get('/api/houses', controller.read);
+app.post('/api/houses', controller.create);
+app.delete('/api/houses/:id', controller.delete);
 
 const SERVER_PORT = 4000;
 app.listen(SERVER_PORT, ()=>{
