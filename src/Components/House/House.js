@@ -1,5 +1,6 @@
 import React from 'react';
 import './House.css';
+import InputBox from '../InputBox';
 
 export default function House(props){
     return(
@@ -13,9 +14,10 @@ export default function House(props){
 
                     <p>{props.mortgage}</p> <p>{props.rent}</p>
                 </div>
-                <img src={props.image} width='120'/>
-                <div className="button">
-                    <button onClick={()=>props.delete(props.house_id)}>Delete</button>
+                <img src={props.image} width='120' />
+
+                <div >
+                    <button className="buttony" onClick={()=>props.delete(props.house_id)}>Delete</button>
                 </div>
         </div>
     )

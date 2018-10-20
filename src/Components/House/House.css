@@ -24,7 +24,7 @@
     margin: 15px;
     border: 2px solid rgba(9, 9, 32, 0.548);
 }
-.houses button{
+.buttony{
     background: transparent;
     background-image:url('https://raw.githubusercontent.com/DevMountain/simulation-2/master/assets/delete_button.png');
     width: 10px;
@@ -38,3 +38,11 @@
     margin-right: 10px;
     margin-top: 5px;
 }
+/* .houses button {
+    background: transparent;
+    color: transparent;
+    outline: none;
+    border: none;
+    margin-right: 50px;
+} */
+

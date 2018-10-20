@@ -28,6 +28,13 @@ class Dashboard extends Component {
       window.location.reload();
     })
   }
+  update(id, url){
+    axios.put(`/api/houses/${id}?image_url=${url}`).then(res=>{
+      this.readHouseList(res)
+    }).catch(error=>{
+      console.error("error updatingimg", error)
+    })
+  }
   render() {
     let displayHouses = this.state.houseList.map((el,i)=>{
       return (
@@ -35,7 +42,8 @@ class Dashboard extends Component {
           <House name={el.name} image={el.image_url} 
           mortgage={el.monthly_mortgage} rent={el.desired_rent} 
           address={el.address} city={el.city} state={el.state} 
-          zip={parseInt(el.zip)} house_id={el.house_id} delete={this.delete}/>
+          zip={parseInt(el.zip)} house_id={el.house_id} delete={this.delete}
+          update={this.update}/>
         </div>
       )
     })

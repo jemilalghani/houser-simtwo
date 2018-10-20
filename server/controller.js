@@ -24,5 +24,14 @@ module.exports={
         }).catch(error=>{
             console.error("error in DELETE /api/houses", error)
         })
+    },
+    update:(req,res)=>{
+        const db = req.app.get('db');
+        const {params, query}=req;
+        db.update_house([params.id, query.image_url]).then(product=>{
+            res.status(200).json(product)
+        }).catch(error=>{
+            console.error('error in PUT /api/inventory', error)
+        })
     }
 }
